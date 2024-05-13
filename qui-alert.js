@@ -1,7 +1,6 @@
 import { LitElement, html, css} from 'lit';
 
-import '@vaadin/icon';
-import '@vaadin/icons';
+import '@qomponent/qui-icons';
 
 /**
  * Alert UI Component based on Lit that looks like the Bootstrap Alert
@@ -127,18 +126,17 @@ export class QuiAlert extends LitElement {
 
     _renderIcon(){
         if(this.icon){
-            // User provided icon
-            return html`<vaadin-icon icon="${this.icon}"></vaadin-icon>`;
+            return html`<fas-icon size="${this.size}" icon="${this.icon}"></fas-icon>`;
         }else if (this.showIcon){
             // Default icon
             if(this.level === "info"){
-                return html`<vaadin-icon icon="vaadin:info-circle"></vaadin-icon>`;
+                return html`<fas-icon size="${this.size}" icon="circle-info"></fas-icon>`;
             }else if(this.level === "success"){
-                return html`<vaadin-icon icon="vaadin:check-circle"></vaadin-icon>`;
+                return html`<fas-icon size="${this.size}" icon="circle-check"></fas-icon>`;
             }else if(this.level === "warning"){
-                return html`<vaadin-icon icon="vaadin:warning"></vaadin-icon>`;
+                return html`<fas-icon size="${this.size}" icon="triangle-exclamation"></fas-icon>`;
             }else if(this.level === "error"){
-                return html`<vaadin-icon icon="vaadin:exclamation-circle"></vaadin-icon>`;
+                return html`<fas-icon size="${this.size}" icon="circle-exclamation"></fas-icon>`;
             }
         }
     }
@@ -151,7 +149,7 @@ export class QuiAlert extends LitElement {
 
     _renderClose(){
         if (!this.permanent) {
-            return html`<vaadin-icon class="close" icon="vaadin:close-big" @click="${this._dismiss}"></vaadin-icon>`;
+            return html`<fas-icon class="close" icon="xmark" @click="${this._dismiss}"></fas-icon>`;
         }
     }
 
