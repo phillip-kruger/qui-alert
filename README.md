@@ -10,7 +10,7 @@ npm i @qomponent/qui-alert
 ## Usage
 
 ```javascript
-import 'qui-alert';
+import '@qomponent/qui-alert';
 ```
 
 ```html
